@@ -1,4 +1,27 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<ngx-smart-modal #dialog1 identifier="dialog1">
+	<h2>一般的</h2>
+	<p>Some stuff...</p>
+
+	<button (click)="dialog1.close()">Close</button>
+</ngx-smart-modal>
+<div>
+	<h1>Classic dialog</h1>
+	<button (click)="openDialog()">開啟一般的</button>
+</div>
+
+<hr>
+<ngx-smart-modal #dialog2 identifier="dialog2">
+	<h2>第一層</h2>
+	<p>Some stuff...</p>
+  <button (click)="openDialogLayer2()">開啟第二層</button>
+	<button (click)="dialog2.close()">Close</button>
+</ngx-smart-modal>
+<ngx-smart-modal #dialog3 identifier="dialog3">
+	<h2>第二層</h2>
+	<p>Some stuff...</p>
+	<button (click)="dialog3.close()">Close</button>
+</ngx-smart-modal>
+<div>
+	<h1>Nested dialog</h1>
+	<button (click)="openDialogLayer1()">開啟第一層</button>
+</div>
